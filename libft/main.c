@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lib.h"
+#include <string.h>
 
 int	main(void)
 {
@@ -25,6 +26,7 @@ int	main(void)
 	printf("a returns %d\n", ft_isprint('a'));
 	printf("strlen\n");
 	printf("hello has %d letters\n", ft_strlen("hello"));
-	printf("helloooooooooooooooooooo hey has %d letters\n", ft_strlen("helloooooooooooooooooooo hey"));
+	printf("to upper\n");
+	printf("a to upper  returns %d\n", ft_toupper('a'));
 	return 0;
 }	
