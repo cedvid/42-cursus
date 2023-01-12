@@ -9,7 +9,7 @@
 /*   Updated: 2023/01/11 17:13:01 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "lib.h"
+#include "libft.h"
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 16:04:33 by cvidot            #+#    #+#             */
-/*   Updated: 2023/01/12 13:59:13 by cvidot           ###   ########.fr       */
+/*   Created: 2023/01/12 14:12:53 by cvidot            #+#    #+#             */
+/*   Updated: 2023/01/12 14:34:00 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strchr(const char *s, int c)
+char	*strrchr(const char *s, int c)
 {
-	int	i;
+	int	len;
 
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
-		i++;
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	else
-		return (0);
-}
+	len = ft_strlen(s);
+	while (s[len-1] != c && s[len-1] != '\0')
+	       len--;	
+
