@@ -52,8 +52,15 @@ int	main(void)
 	printf("hi i am a string returns %s\n", ft_strchr("hi i am a string", 'a'));
 	printf("real function returns %s\n", strchr("hi i am a string", 'a'));
 	sep();
-	printf("strlcpy\n");
-	printf("real func hello and hello returns %zu\n", strlcpy("hello", "hello", 5));
+	printf("strrchr\n");
+	printf("hi i am a string returns %s\n", ft_strrchr("hi i am a string", 'a'));
+	printf("real function returns %s\n", strrchr("hi i am a string", 'a'));
 	sep();
+	printf("strncmp\n");
+	printf("hello and helio returns %p\n", ft_strncmp("hello", "helio", 4));
+	printf("real function returns %d\n", strncmp("hello", "helio", 4));
+	//printf("strlcpy\n");
+	//printf("real func hello and hello returns %zu\n", strlcpy("hello", "hello", 5));
+	//sep();
 	return 0;
 }
