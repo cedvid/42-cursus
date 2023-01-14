@@ -1,3 +1,6 @@
+#ifndef LIBFT.H
+#   define LIBFT.H
+
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_strlen(const char *s);
@@ -13,3 +16,5 @@ char	*ft_strrchr(const char *s, int c);
 int	*ft_strncmp(const char *s1, const char *s2, int n);
 void	*ft_memset(void *s, int c, int n);
 void	ft_bzero(void *s, int n);
+
+#endif
