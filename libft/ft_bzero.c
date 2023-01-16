@@ -9,7 +9,9 @@
 /*   Updated: 2023/01/14 12:32:31 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void	ft_bzero(void *s, int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	int	i;
 

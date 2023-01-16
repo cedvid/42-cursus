@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "libft.h"
 #include <string.h>
-#include <bsd/string.h>
+// #include <bsd/string.h>
 
 void sep(void)
 {
@@ -114,9 +114,43 @@ int	main(void)
 	ft_bzero(str2+2, 2);
 	printf("ft_bzero returns %s\n", str2);
 	sep();
+	
+	// REINITIALIZE TEST STRINGS
+	ft_memset(str, 'a', 5);
+	ft_memset(str2,'z', 5);
+
+	// MEMCPY
+	
+	printf("memcpy\n");
+	memcpy(str, str2, 3);
+	printf("memcpy with dest 'aaaaa' src 'zzzzz' 3 returns %s\n", str);
+
+	// REINIT STR
+	ft_memset(str, 'a', 5);
+	ft_memset(str2, 'z', 5);
 	//
+	ft_memcpy(str, str2, 3);
+	printf("ft_memcpy with dest 'aaaaa' and src 'zzzzz' 3 returns %s\n", str);
+	sep();
+	
+	// MEMCMP
+	printf("memcmp\n");
+	printf("for strings zzzaa and zzzzz, memcmp returns %d\n", memcmp(str, str2, sizeof(str)));
+	printf("for strings zzzaa and zzzzz, ft_memcmp returns %d\n", ft_memcmp(str, str2, sizeof(str)));
+	sep();
+
+	// MEMCHR
+	printf("memchr\n");
+	printf("%s %s", str, str2);
+
+	// STRLCAT
+	// printf("strlcat\n");
+	// printf("strlcat returns %d\n", strlcat(str, str2, (sizeof(str) + sizeof(str2) +1)));
+
+	// STRLCPY 
+	
 	//printf("strlcpy\n");
-	//printf("real func hello and hello returns %zu\n", strlcpy("hello", "hello", 5));
-	//sep();
+	//printf("hello and hello returns %d\n", ft_strlcpy("hello", "hello", 5));
+	// sep();
 	return 0;
 }
