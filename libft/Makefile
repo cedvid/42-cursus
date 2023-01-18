@@ -10,10 +10,56 @@
 #                                                                              #
 # **************************************************************************** #
 
+SRCS = ft_memset.c		\
+		ft_bzero.c		\
+		ft_memcpy.c		\
+		ft_memmove.c 	\
+		ft_memchr.c		\
+		ft_memcmp.c		\
+		ft_strlen.c		\
+		ft_isalpha.c 	\
+		ft_isdigit.c		\
+		ft_isalnum.c		\
+		ft_isascii.c		\
+		ft_isprint.c		\
+		ft_toupper.c		\
+		ft_tolower.c		\
+		ft_strchr.c		\
+		ft_strrchr.c		\
+		ft_strncmp.c		\
+		ft_strlcpy.c		\
+		ft_strlcat.c		\
+		ft_atoi.c		\
+		ft_strdup.c
+
 NAME = libft.a
 
-SRC = ft_atoi.c, ft_isalnum.c, ft_isalpha.c, ft_isascii.c, ft_isidgit.c, ft_isprint.c, ft_strchr.c, ft_strlcpy.c, ft_strlen.c, ft_tolwer.c, ft_toupper.c
+OBJS_DIR = objs/
+OBJS = $(SRCS:.c=.o)
+OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
-CFLAGS = -Wall -Werror -Wextra
+OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR))
+
+CC = cc
+
+CC_FLAGS = -Wall -Wextra -Werror
+
+$(OBJS_DIR)%.o : %.c libft.h
+	@mkdir -p $(OBJS_DIR)
+	@echo "Compiling: $<"
+	@cc $(CC_FLAGS) -c $< -o $@
+
+$(NAME): $(OBJECTS_PREFIXED)
+	@ar r $(NAME) $(OBJECTS_PREFIXED)
+
+all: $(NAME)
+
+clean:
+	rm -rf $(OBJS_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
 
 

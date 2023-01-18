@@ -13,7 +13,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n)
