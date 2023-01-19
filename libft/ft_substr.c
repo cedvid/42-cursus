@@ -20,10 +20,13 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     sub = (char *)malloc(sizeof(char) * len + 1);
     str = (unsigned char *) s;
     i = 0;
+    if (!sub)
+        return (NULL);
     while (i < len)
     {
         sub[i] = s[start + i];
         i++;
     }
+    sub[i] = '\0';
     return (sub);
 }
