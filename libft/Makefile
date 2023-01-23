@@ -31,7 +31,9 @@ SRCS = ft_memset.c		\
 		ft_strlcat.c		\
 		ft_atoi.c		\
 		ft_strdup.c     \
-		ft_substr.c
+		ft_substr.c		\
+		ft_strtrim.c	\
+		ft_calloc.c
 
 NAME = libft.a
 

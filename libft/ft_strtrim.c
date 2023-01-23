@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h> //remove later
 
-int check_set(char c, char const *set)
+static int check_set(char c, char const *set)
 {
     int i;
 
@@ -47,12 +46,4 @@ char    *ft_strtrim(char const *s1, char const *set)
     new = (char *)malloc(sizeof(char) * (end - start) + 1);
     ft_memcpy(new, &str[start], (end - start + 1));
     return (new);
-}
-
-int main(void)
-{
-    char set[4] = "  _";
-    char str[12] = "  _hello  _";
-    printf("\nthe string: %s\n", ft_strtrim(str, set));
-    return (0);
 }
