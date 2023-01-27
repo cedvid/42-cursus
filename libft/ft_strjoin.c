@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 int	ft_strlen(const char *s)
 {
@@ -38,7 +38,6 @@ char    *ft_strjoin(char const *s1, char const *s2)
         str[i] = s1[i];
         i++;
     }
-    // i = 5
     while (s2[j] != '\0')
     {
         str[i] = s2[j];
@@ -49,10 +48,10 @@ char    *ft_strjoin(char const *s1, char const *s2)
     return (str);
 }
 
-int main(void)
-{
-    char str[6] = "hello";
-    char str2[6] = "aloha";
-    printf("the new str is =\n%s", ft_strjoin(str, str2));
-    return 0;
-}
+// int main(void)
+// {
+//     char str[6] = "hello";
+//     char str2[6] = "aloha";
+//     printf("the new str is: %s\n", ft_strjoin(str, str2));
+//     return 0;
+// }
