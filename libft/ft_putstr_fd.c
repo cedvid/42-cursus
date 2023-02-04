@@ -9,7 +9,9 @@
 /*   Updated: 2023/01/16 12:47:00 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void    ft_putstr_fd(char *s, int fd);
+#include <unistd.h>
+
+void    ft_putstr_fd(char *s, int fd)
 {
     int i;
 
