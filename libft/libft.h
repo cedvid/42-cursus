@@ -29,7 +29,11 @@ char *ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char    *ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strtrim(char const *s1, char const *set);
+char    *ft_strjoin(char const *s1, char const *s2);
 void    *ft_calloc(size_t nmemb, size_t size);
 void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+char *ft_itoa(int n);
 
 #endif
