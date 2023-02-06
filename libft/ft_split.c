@@ -11,11 +11,45 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+static int ft_word_count(char const *str, char c)
+{
+    int words;
+
+    words = 0;
+    while (*str)
+    {
+        if (*str == c)
+            str++;
+        else
+        {
+            words++;
+            while (*str && *str != c)
+                str++;
+        }
+    }
+    return (words);
+}
+
 char    **ft_split(char const *s, char c)
 {
+    //find how many strings will be in arr
+    int word_nbr;
+    char    **res;
+
+    word_nbr = ft_word_count(s, c);
+    res = malloc(sizeof(*res) * (word_nbr + 1));
+    if (!res)
+        return (NULL);
     
 }
- 
+
+int main(void)
+{
+    char str[12] = "hello*aloha*salut*guten tag*bonjour*nihao";
+    printf("return: %s\n", ft_split(str, '*'));
+    return (0);
+}
+
 /* Function name ft_split
 Prototype char **ft_split(char const *s, char c);
 
