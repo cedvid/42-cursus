@@ -10,43 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <string.h> //remove later
+#include <stdio.h> // remove later
 
-static int ft_word_count(char const *str, char c)
+static int ft_str_count(char const *str, char c)
 {
-    int words;
+    int count;
 
-    words = 0;
+    count = 0;
     while (*str)
     {
-        if (*str == c)
-            str++;
-        else
+        if (*str != c)
         {
-            words++;
+            count++;
             while (*str && *str != c)
                 str++;
         }
+        else
+            str++;
     }
-    return (words);
+    return (count);
 }
 
-char    **ft_split(char const *s, char c)
-{
-    //find how many strings will be in arr
-    int word_nbr;
-    char    **res;
+// char    **ft_split(char const *s, char c)
+// {
+//     //find how many strings will be in arr
+//     int word_nbr;
+//     char    **res;
 
-    word_nbr = ft_word_count(s, c);
-    res = malloc(sizeof(*res) * (word_nbr + 1));
-    if (!res)
-        return (NULL);
+//     word_nbr = ft_word_count(s, c);
+//     res = malloc(sizeof(*res) * (word_nbr + 1));
+//     if (!res)
+//         return (NULL);
     
-}
+// }
 
 int main(void)
 {
-    char str[12] = "hello*aloha*salut*guten tag*bonjour*nihao";
-    printf("return: %s\n", ft_split(str, '*'));
+    char str[42] = "hello*aloha*salut*guten tag*bonjour*nihao";
+    printf("return: %d\n", ft_str_count(str, '*'));
     return (0);
 }
 
