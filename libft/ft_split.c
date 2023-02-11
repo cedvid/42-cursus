@@ -13,7 +13,7 @@
 #include <string.h> //remove later
 #include <stdio.h>  // remove later
 
-static int ft_str_count(char const *str, char c)
+static  int ft_str_count(char const *str, char c)
 {
     int count;
 
@@ -32,19 +32,13 @@ static int ft_str_count(char const *str, char c)
     return (count);
 }
 
-char **ft_split(char const *s, char c)
+static void ft_copy_strings(char const *s, char **res, char c)
 {
-    int str_nbr;
-    char **res;
     int i;
     int current_str;
     int start;
     int length;
 
-    str_nbr = ft_str_count(s, c);
-    res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
-    if (!res)
-        return (NULL);
     i = 0;
     current_str = 0;
     while (s[i])
@@ -59,13 +53,23 @@ char **ft_split(char const *s, char c)
             i++;
         }
         res[current_str] = (char *)malloc(sizeof(char) * length + 1);
-        if (!res[current_str])
-            return (NULL);
         ft_strlcpy(res[current_str], &s[start], length + 1);
         res[current_str][length] = '\0';
         current_str++;
     }
     res[current_str] = NULL;
+}
+
+char **ft_split(char const *s, char c)
+{
+    int str_nbr;
+    char **res;
+
+    str_nbr = ft_str_count(s, c);
+    res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
+    if (!res)
+        return (NULL);
+    ft_copy_strings(s, res, c);
     return (res);
 }
 
