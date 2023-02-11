@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 #include <string.h> //remove later
-#include <stdio.h> // remove later
+#include <stdio.h>  // remove later
 
 static int ft_str_count(char const *str, char c)
 {
@@ -32,23 +32,63 @@ static int ft_str_count(char const *str, char c)
     return (count);
 }
 
-// char    **ft_split(char const *s, char c)
-// {
-//     //find how many strings will be in arr
-//     int word_nbr;
-//     char    **res;
+char **ft_split(char const *s, char c)
+{
+    int str_nbr;
+    char **res;
+    int i;
+    int current_str;
+    int start;
+    int length;
 
-//     word_nbr = ft_word_count(s, c);
-//     res = malloc(sizeof(*res) * (word_nbr + 1));
-//     if (!res)
-//         return (NULL);
-    
-// }
+    str_nbr = ft_str_count(s, c);
+    res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
+    if (!res)
+        return (NULL);
+    i = 0;
+    current_str = 0;
+    while (s[i])
+    {
+        while (s[i] == c)
+            i++;
+        start = i;
+        length = 0;
+        while (s[i] && s[i] != c)
+        {
+            length++;
+            i++;
+        }
+        res[current_str] = (char *)malloc(sizeof(char) * length + 1);
+        if (!res[current_str])
+            return (NULL);
+        ft_strlcpy(res[current_str], &s[start], length + 1);
+        res[current_str][length] = '\0';
+        current_str++;
+    }
+    res[current_str] = NULL;
+    return (res);
+}
 
 int main(void)
 {
     char str[42] = "hello*aloha*salut*guten tag*bonjour*nihao";
-    printf("return: %d\n", ft_str_count(str, '*'));
+    char c = '*';
+    char **arr = ft_split(str, c);
+    int i = 0;
+
+    while (arr[i])
+    {
+        printf("%s\n", arr[i]);
+        i++;
+    }
+
+    i = 0;
+    while (arr[i])
+    {
+        free(arr[i]);
+        i++;
+    }
+    free(arr);
     return (0);
 }
 
