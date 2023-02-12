@@ -42,7 +42,8 @@ SRCS = ft_memset.c		\
 		ft_putnbr_fd.c		\
 		ft_split.c		\
 		ft_strmapi.c		\
-		ft_striteri.c
+		ft_striteri.c		\
+		ft_lstadd_front.c
 
 NAME = libft.a
 
@@ -58,7 +59,6 @@ CC_FLAGS = -Wall -Wextra -Werror
 
 $(OBJS_DIR)%.o : %.c libft.h
 	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling: $<"
 	@cc $(CC_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS_PREFIXED)
