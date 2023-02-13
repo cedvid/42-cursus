@@ -6,37 +6,37 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:46:02 by cvidot            #+#    #+#             */
-/*   Updated: 2023/01/16 12:46:19 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/13 10:48:55 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    unsigned int    i;
+	unsigned int	i;
 
-    i = 0;
-    while (s[i])
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
 
-void i_to_a(unsigned int i, char *c)
+/*void i_to_a(unsigned int i, char *c)
 {
     if (*c == 'i' && i > 0)
         *c = 'a';
-}
+}*/
 
-int main(void)
-{
-    char str[] = "This is the modified string";
-    ft_striteri(str, i_to_a);
-    printf("the string: %s\n", str);
-    return 0;
-}
+// int main(void)
+// {
+//     char str[] = "This is the modified string";
+//     ft_striteri(str, i_to_a);
+//     printf("the string: %s\n", str);
+//     return 0;
+// }
 
 /*Function name ft_striteri
 Prototype void ft_striteri(char *s, void (*f)(unsigned int, char*));

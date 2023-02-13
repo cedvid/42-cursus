@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/13 10:50:48 by cvidot            #+#    #+#             */
+/*   Updated: 2023/02/13 10:52:01 by cvidot           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 
-void    ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-    new->next = *lst;
-    *lst = new;
+	new->next = *lst;
+	*lst = new;
 }
 
-int main(void)
+/*int main(void)
 {
     t_list *new_node = ft_lstnew("42");
     t_list *second_node = ft_lstnew("Not 42");
@@ -36,7 +47,7 @@ int main(void)
     printf("\n");
 
     return (0);
-}
+}*/
 
 /*Function name ft_lstadd_front
 Prototype void ft_lstadd_front(t_list **lst, t_list *new);

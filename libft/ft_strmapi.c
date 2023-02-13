@@ -6,31 +6,31 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:45:22 by cvidot            #+#    #+#             */
-/*   Updated: 2023/01/16 12:45:52 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/13 11:12:08 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
+// #include <stdio.h>
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    char    *res;
-    unsigned int    i;
+	unsigned int	i;
+	char			*res;
 
-    i = 0;
-    res = (char *)malloc(ft_strlen(s) + 1);
-    if (!res)
-        return (NULL);
-    while (s[i])
-    {
-        res[i] = f(i, s[i]);
-        i++;
-    }
-    res[i] = '\0';
-    return (res);
+	i = 0;
+	res = (char *)malloc(ft_strlen(s) + 1);
+	if (!res)
+		return (NULL);
+	while (s[i])
+	{
+		res[i] = f(i, s[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }
 
-char i_to_a(unsigned int i, char c)
+/*char i_to_a(unsigned int i, char c)
 {
     if (c == 'i' && i > 0)
         return 'a';
@@ -38,12 +38,12 @@ char i_to_a(unsigned int i, char c)
         return c;
 }
 
-int main(void)
-{
-    char *str = "This is the modified string";
-    printf("return value is: %s\n", ft_strmapi(str, i_to_a));
-    return 0;
-}
+// int main(void)
+// {
+//     char *str = "This is the modified string";
+//     printf("return value is: %s\n", ft_strmapi(str, i_to_a));
+//     return 0;
+// }*/
 
 /*Function name ft_strmapi
 Prototype char *ft_strmapi(char const *s, char (*f)(unsigned int, char));

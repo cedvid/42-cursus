@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/13 10:40:29 by cvidot            #+#    #+#             */
+/*   Updated: 2023/02/13 10:45:13 by cvidot           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 
-t_list  *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list  *new;
+	t_list	*new;
 
-    new = malloc(sizeof(t_list));
-    if (!new)
-        return (NULL);
-    new->content = content;
-    new->next = NULL;
-    return (new);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
 
-int main(void)
+/*int main(void)
 {
     t_list *new_node = ft_lstnew("42");
 
@@ -25,7 +36,7 @@ int main(void)
     printf("Node content is: %s", (char *)new_node->content);
     free(new_node);
     return (0);
-}
+}*/
 
 /*Function name ft_lstnew
 Prototype t_list *ft_lstnew(void *content);

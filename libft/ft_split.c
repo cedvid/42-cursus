@@ -6,95 +6,95 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:44:41 by cvidot            #+#    #+#             */
-/*   Updated: 2023/01/16 12:44:53 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/13 11:03:11 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <string.h> //remove later
 #include <stdio.h>  // remove later
 
-static  int ft_str_count(char const *str, char c)
+static int	ft_str_count(char const *str, char c)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    while (*str)
-    {
-        if (*str != c)
-        {
-            count++;
-            while (*str && *str != c)
-                str++;
-        }
-        else
-            str++;
-    }
-    return (count);
+	count = 0;
+	while (*str)
+	{
+		if (*str != c)
+		{
+			count++;
+			while (*str && *str != c)
+				str++;
+		}
+		else
+			str++;
+	}
+	return (count);
 }
 
-static void ft_copy_strings(char const *s, char **res, char c)
+static void	ft_copy_strings(char const *s, char **res, char c)
 {
-    int i;
-    int current_str;
-    int start;
-    int length;
+	int	i;
+	int	current_str;
+	int	start;
+	int	length;
 
-    i = 0;
-    current_str = 0;
-    while (s[i])
-    {
-        while (s[i] == c)
-            i++;
-        start = i;
-        length = 0;
-        while (s[i] && s[i] != c)
-        {
-            length++;
-            i++;
-        }
-        res[current_str] = (char *)malloc(sizeof(char) * length + 1);
-        ft_strlcpy(res[current_str], &s[start], length + 1);
-        res[current_str][length] = '\0';
-        current_str++;
-    }
-    res[current_str] = NULL;
+	i = 0;
+	current_str = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		start = i;
+		length = 0;
+		while (s[i] && s[i] != c)
+		{
+			length++;
+			i++;
+		}
+		res[current_str] = (char *)malloc(sizeof(char) * length + 1);
+		ft_strlcpy(res[current_str], &s[start], length + 1);
+		res[current_str][length] = '\0';
+		current_str++;
+	}
+	res[current_str] = NULL;
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    int str_nbr;
-    char **res;
+	int		str_nbr;
+	char	**res;
 
-    str_nbr = ft_str_count(s, c);
-    res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
-    if (!res)
-        return (NULL);
-    ft_copy_strings(s, res, c);
-    return (res);
+	str_nbr = ft_str_count(s, c);
+	res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
+	if (!res)
+		return (NULL);
+	ft_copy_strings(s, res, c);
+	return (res);
 }
 
-int main(void)
-{
-    char str[42] = "hello*aloha*salut*guten tag*bonjour*nihao";
-    char c = '*';
-    char **arr = ft_split(str, c);
-    int i = 0;
+// int main(void)
+// {
+//     char str[42] = "hello*aloha*salut*guten tag*bonjour*nihao";
+//     char c = '*';
+//     char **arr = ft_split(str, c);
+//     int i = 0;
 
-    while (arr[i])
-    {
-        printf("%s\n", arr[i]);
-        i++;
-    }
+//     while (arr[i])
+//     {
+//         printf("%s\n", arr[i]);
+//         i++;
+//     }
 
-    i = 0;
-    while (arr[i])
-    {
-        free(arr[i]);
-        i++;
-    }
-    free(arr);
-    return (0);
-}
+//     i = 0;
+//     while (arr[i])
+//     {
+//         free(arr[i]);
+//         i++;
+//     }
+//     free(arr);
+//     return (0);
+// }
 
 /* Function name ft_split
 Prototype char **ft_split(char const *s, char c);
