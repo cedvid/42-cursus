@@ -6,7 +6,7 @@
 #    By: cvidot <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 11:13:00 by cvidot            #+#    #+#              #
-#    Updated: 2023/02/13 14:46:54 by cvidot           ###   ########.fr        #
+#    Updated: 2023/02/13 15:14:16 by cvidot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS = ft_memset.c		\
 		ft_strmapi.c		\
 		ft_striteri.c		\
 		ft_lstadd_front.c	\
-		ft_lstsize.c
+		ft_lstsize.c		\
+		ft_lstlast.c
 
 NAME = libft.a
 
