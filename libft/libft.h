@@ -6,7 +6,7 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:16:55 by cvidot            #+#    #+#             */
-/*   Updated: 2023/02/13 11:45:51 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/13 14:48:36 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -58,5 +58,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
 #endif
