@@ -42,8 +42,9 @@ SRCS = ft_memset.c		\
 		ft_putnbr_fd.c		\
 		ft_split.c		\
 		ft_strmapi.c		\
-		ft_striteri.c		\
-		ft_lstadd_front.c	\
+		ft_striteri.c
+
+BONUS_SRCS = ft_lstadd_front.c	\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
 		ft_lstadd_back.c
@@ -52,9 +53,9 @@ NAME = libft.a
 
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR))
+BONUS_OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(BONUS_OBJS))
 
 CC = cc
 
@@ -66,6 +67,9 @@ $(OBJS_DIR)%.o : %.c libft.h
 
 $(NAME): $(OBJECTS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_PREFIXED)
+
+bonus: $(BONUS_OBJS_PREFIXED)
+	@ar r $(NAME) $(BONUS_OBJS_PREFIXED)
 
 all: $(NAME)
 
