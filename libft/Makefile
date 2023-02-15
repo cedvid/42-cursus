@@ -50,14 +50,15 @@ BONUS_SRCS = ft_lstadd_front.c	\
 		ft_lstadd_back.c	\
 		ft_lstdelone.c		\
 		ft_lstclear.c		\
-		ft_lstiter.c
+		ft_lstiter.c		\
+		ft_lstmap.c
 
 NAME = libft.a
 
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
+OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 BONUS_OBJS_PREFIXED = $(addprefix $(OBJS_DIR), $(BONUS_OBJS))
 
 CC = cc
@@ -68,8 +69,8 @@ $(OBJS_DIR)%.o : %.c libft.h
 	@mkdir -p $(OBJS_DIR)
 	@cc $(CC_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_PREFIXED)
+$(NAME): $(OBJS_PREFIXED)
+	@ar r $(NAME) $(OBJS_PREFIXED)
 
 bonus: $(BONUS_OBJS_PREFIXED)
 	@ar r $(NAME) $(BONUS_OBJS_PREFIXED)
