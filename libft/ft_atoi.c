@@ -9,7 +9,9 @@
 /*   Updated: 2023/01/12 11:00:04 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isspace(char c)
+#include "libft.h"
+
+static int	ft_isspace(char c)
 {
 	if (c == 32 || (c >= 9 && c <= 13))
 		return (1);
