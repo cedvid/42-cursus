@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <string.h> //remove later
-#include <stdio.h>  // remove later
 
 static int	ft_str_count(char const *str, char c)
 {
@@ -32,7 +30,7 @@ static int	ft_str_count(char const *str, char c)
 	return (count);
 }
 
-static void	ft_copy_strings(char const *s, char **res, char c)
+static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
 {
 	int	i;
 	int	current_str;
@@ -41,7 +39,7 @@ static void	ft_copy_strings(char const *s, char **res, char c)
 
 	i = 0;
 	current_str = 0;
-	while (s[i])
+	while (current_str < str_nbr)
 	{
 		while (s[i] == c)
 			i++;
@@ -69,34 +67,11 @@ char	**ft_split(char const *s, char c)
 	res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
 	if (!res)
 		return (NULL);
-	ft_copy_strings(s, res, c);
+	ft_copy_strings(s, res, c, str_nbr);
 	return (res);
 }
 
-// int main(void)
-// {
-//     char str[42] = "hello*aloha*salut*guten tag*bonjour*nihao";
-//     char c = '*';
-//     char **arr = ft_split(str, c);
-//     int i = 0;
-
-//     while (arr[i])
-//     {
-//         printf("%s\n", arr[i]);
-//         i++;
-//     }
-
-//     i = 0;
-//     while (arr[i])
-//     {
-//         free(arr[i]);
-//         i++;
-//     }
-//     free(arr);
-//     return (0);
-// }
-
-/* Function name ft_split
+/*Function name ft_split
 Prototype char **ft_split(char const *s, char c);
 
 Parameters s: The string to be split.
@@ -110,4 +85,4 @@ External functs. malloc, free
 Description Allocates (with malloc(3)) and returns an array
 of strings obtained by splitting ’s’ using the
 character ’c’ as a delimiter. The array must end
-with a NULL pointer. */
+with a NULL pointer.*/
