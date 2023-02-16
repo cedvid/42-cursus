@@ -6,7 +6,7 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 16:50:51 by cvidot            #+#    #+#             */
-/*   Updated: 2023/02/13 16:51:50 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/16 11:01:49 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(node, del);
 	}
 }
-
+/*
 int main(void)
 {
     t_list *new_node = ft_lstnew("42");
@@ -54,7 +54,7 @@ int main(void)
     }
 
     return 0;
-}
+}*/
 
 /*Function name ft_lstclear
 Prototype void ft_lstclear(t_list **lst, void (*del)(void

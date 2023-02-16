@@ -6,7 +6,7 @@
 /*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 14:37:11 by cvidot            #+#    #+#             */
-/*   Updated: 2023/02/13 14:45:54 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/16 11:02:09 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,7 +26,7 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
+/*
 int main(void)
 {
     t_list *new_node = ft_lstnew("42");
@@ -40,7 +40,7 @@ int main(void)
 
     printf("Node count is: %d\n", ft_lstsize(list));
     return (0);
-}
+}*/
 
 /*Function name ft_lstsize
 Prototype int ft_lstsize(t_list *lst);
