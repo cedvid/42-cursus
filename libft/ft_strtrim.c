@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:44:19 by cvidot            #+#    #+#             */
 /*   Updated: 2023/02/13 12:40:26 by cvidot           ###   ########.fr       */

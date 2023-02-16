@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:47:30 by cvidot            #+#    #+#             */
 /*   Updated: 2023/02/13 11:49:38 by cvidot           ###   ########.fr       */

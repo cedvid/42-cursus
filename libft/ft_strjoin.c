@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:43:52 by cvidot            #+#    #+#             */
 /*   Updated: 2023/02/13 11:16:14 by cvidot           ###   ########.fr       */

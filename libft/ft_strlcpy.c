@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:29:38 by cvidot            #+#    #+#             */
 /*   Updated: 2023/01/11 17:13:01 by cvidot           ###   ########.fr       */

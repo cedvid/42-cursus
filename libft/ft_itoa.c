@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cvidot <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:45:02 by cvidot            #+#    #+#             */
 /*   Updated: 2023/02/13 12:33:04 by cvidot           ###   ########.fr       */

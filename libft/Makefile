@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cvidot <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 11:13:00 by cvidot            #+#    #+#              #
 #    Updated: 2023/02/13 16:17:25 by cvidot           ###   ########.fr        #
@@ -45,6 +45,7 @@ SRCS = ft_memset.c		\
 		ft_striteri.c
 
 BONUS_SRCS = ft_lstadd_front.c	\
+		ft_lstnew.c			\
 		ft_lstsize.c		\
 		ft_lstlast.c		\
 		ft_lstadd_back.c	\
