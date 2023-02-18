@@ -3,7 +3,7 @@
 #include <string.h>
 #include <bsd/string.h>
 
-void print_title(char *str)
+static void print_title(char *str)
 {
 	char    line[20] = "-------------------";
 	printf("%s\n", line);
@@ -82,12 +82,6 @@ int	main(void)
 	printf("5 return value: %d\n", ft_isprint('5'));
 	printf("\n\n");
 
-	//ITOA
-	print_title("ITOA");
-    printf("the result for 2147483647 is %s\n", ft_itoa(2147483647));
-    printf("the result for 0 is %s\n", ft_itoa(0));
-	printf("\n\n");
-
 	// MEMCHR
 	print_title("MEMCHR");
 	char memchr_str[] = "This is a string";
@@ -120,43 +114,21 @@ int	main(void)
 	printf("\n\n");
 
 	//MEMMOVE
-	/*
-int main(void)
-{
-	char str[] = "hello world";
-	printf("%s\n", ft_memmove(str, str+6, 5));
-}*/
-
-//STITERI
-/*void i_to_a(unsigned int i, char *c)
-{
-    if (*c == 'i' && i > 0)
-        *c = 'a';
-}*/
-
-// int main(void)
-// {
-//     char str[] = "This is the modified string";
-//     ft_striteri(str, i_to_a);
-//     printf("the string: %s\n", str);
-//     return 0;
-// }
-
-//STRMAPI
-/*char i_to_a(unsigned int i, char c)
-{
-    if (c == 'i' && i > 0)
-        return 'a';
-    else
-        return c;
-}
-
-// int main(void)
-// {
-//     char *str = "This is the modified string";
-//     printf("return value is: %s\n", ft_strmapi(str, i_to_a));
-//     return 0;
-// }*/
+	print_title("MEMMOVE");
+	char memmove_str[] = "hello world";
+	printf("Before: \'%s\'\n", memmove_str);
+	printf("After ft_memmove(str, str+6, 5): ");
+	printf("%s\n", (char *)ft_memmove(memmove_str, memmove_str+6, 5));
+	printf("\n\n");
+/*
+	// MEMSET
+	print_title("MEMSET");
+	char memset_str[] = "Hello";
+	printf("Before: %s\n", memset_str);
+	printf("After ft_memset, with arguments 'x', 3: %s\n", (char *)ft_memset(memset_str, 'x', 3));
+	char memset_str2[] = "Hello";
+	printf("Real function returns: %s\n", (char *)memset(memset_str2, 'x', 3));
+	printf("\n\n");
 
 	// MEMSET
 	print_title("MEMSET");
@@ -220,7 +192,7 @@ int main(void)
 	printf("ft_strlcpy returns: %ld\n", ft_strlcpy(strlcpy_dst, strlcpy_src, 5));
 	printf("dst becomes: \'%s\'", strlcpy_dst);
 	printf("\n\n");
-
+*/
 
 	return 0;
 }
