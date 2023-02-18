@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -23,21 +22,6 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-
-/*int main(void)
-{
-    t_list *new_node = ft_lstnew("42");
-
-    if (!new_node)
-    {
-        printf("Fail");
-        return (1);
-    }
-    printf("Node content is: %s", (char *)new_node->content);
-    free(new_node);
-    return (0);
-}*/
-
 /*Function name ft_lstnew
 Prototype t_list *ft_lstnew(void *content);
 Parameters content: The content to create the node with.

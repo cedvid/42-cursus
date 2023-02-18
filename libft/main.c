@@ -1,156 +1,226 @@
 #include <stdio.h>
 #include "libft.h"
 #include <string.h>
-// #include <bsd/string.h>
+#include <bsd/string.h>
 
-void sep(void)
+void print_title(char *str)
 {
-	char    sep[14] = "\n----------\n\n";
-
-	printf("%s", sep);
+	char    line[20] = "-------------------";
+	printf("%s\n", line);
+	printf("%s\n", str);
+	printf("%s\n\n", line);
 }
 
 int	main(void)
 {
-	char str[6] = "hello";
-	char str2[6] = "hello";
-
-	sep();
-
-	// ISALNUM
-	
-	printf("isalnum\n");
-	printf("@ returns %d\n", ft_isalnum('@'));
-	printf("5 returns %d\n", ft_isalnum('5'));
-	printf("a returns %d\n", ft_isalnum('a'));
-	sep();
-
-	//ISALPHA
-	
-	printf("isalpha\n");
-	printf("@ returns %d\n", ft_isalpha('@'));
-	printf("5 returns %d\n", ft_isalpha('5'));
-	printf("a returns %d\n", ft_isalpha('a'));
-	sep();
-
-	//ISASCII
-	
-	printf("isascii\n");
-	printf("@ returns %d\n", ft_isascii('@'));
-	printf("5 returns %d\n", ft_isascii('5'));
-	printf("a returns %d\n", ft_isascii('a'));
-	sep();
-
-	//ISDIGIT
-	
-	printf("isdigit\n");
-	printf("@ returns %d\n", ft_isdigit('@'));
-	printf("5 returns %d\n", ft_isdigit('5'));
-	printf("a returns %d\n", ft_isdigit('a'));
-	sep();
-
-	//ISPRINT
-	
-	printf("isprint\n");
-	printf("@ returns %d\n", ft_isprint('@'));
-	printf("5 returns %d\n", ft_isprint('5'));
-	printf("a returns %d\n", ft_isprint('a'));
-	sep();
-
-	//STRLEN
-	
-	printf("strlen\n");
-	printf("hello has %d letters\n", ft_strlen("hello"));
-	sep();
-
-	//TOUPPER TOLOWER
-	
-	printf("to upper and lower\n");
-	printf("a to upper  returns %c\n", ft_toupper('a'));
-	printf("A to lower returns %c\n", ft_tolower('A'));
-	sep();
-
 	// ATOI
-	
-	printf("atoi\n");
-	printf("+054  returns %d\n", ft_atoi("+054"));
-	sep();
+	print_title("ATOI");
 
-	//STRCHR
-	
-	printf("strchr\n");
-	printf("hi i am a string returns %s\n", ft_strchr("hi i am a string", 'a'));
-	printf("real function returns %s\n", strchr("hi i am a string", 'a'));
-	sep();
-	printf("strrchr\n");
-
-	// STRRCHR
-	
-	printf("hi i am a string returns %s\n", ft_strrchr("hi i am a string", 'a'));
-	printf("real function returns %s\n", strrchr("hi i am a string", 'a'));
-	sep();
-
-	// STRNCMP
-	
-	printf("strncmp\n");
-	printf("hello and helio returns %p\n", ft_strncmp("hello", "helio", 4));
-	printf("real function returns %d\n", strncmp("hello", "helio", 4));
-	sep();
-
-	// MEMSET
-	
-	printf("memset\n");
-	memset(str, 'x', 3);
-	printf("memset(hello, 'x', 3) returns %s\n", str);
-	ft_memset(str2, 'x', 3);
-	printf("ft_memset returns %s\n", str2);
-	sep();
+	printf("+054  return value: %d\n", ft_atoi("+054"));
+	printf("-2147483647  return value: %d\n", ft_atoi("-2147483647"));
+	printf("\'not a number\'  return value: %d\n", ft_atoi("not a number"));
+	printf("\n\n");
 
 	// BZERO
-	
-	printf("bzero\n");
-	bzero(str+2, 2);
-	printf("bzero returns %s\n", str);
-	ft_bzero(str2+2, 2);
-	printf("ft_bzero returns %s\n", str2);
-	sep();
-	
-	// REINITIALIZE TEST STRINGS
-	ft_memset(str, 'a', 5);
-	ft_memset(str2,'z', 5);
+	print_title("BZERO");
+	char bzero_str[] = "Hello World";
+	printf("Original string: %s\n", bzero_str);
+	ft_bzero(bzero_str+4, 5);
+	printf("After ft_bzero(str+4, 5): %s\n", bzero_str);
+	char bzero_str2[] = "Hello World";
+	bzero(bzero_str2+4, 5);
+	printf("Real bzero(str+4, 5): %s\n", bzero_str2);
+	printf("\n\n");
 
-	// MEMCPY
-	
-	printf("memcpy\n");
-	memcpy(str, str2, 3);
-	printf("memcpy with dest 'aaaaa' src 'zzzzz' 3 returns %s\n", str);
+	//CALLOC
+	print_title("CALLOC");
+	int nmemb = 5;
+	int *ptr = ft_calloc(nmemb, sizeof(int));
+    if (!ptr)
+	{
+		printf("Calloc failed.\n");
+		return 1;
+	}
+	printf("ft_calloc(5, sizeof(int)):\n");
+    for (int i = 0; i < nmemb; i++)
+	{
+        printf("%d ", ptr[i]);
+    }
+    free(ptr);
+	printf("\n\n");
 
-	// REINIT STR
-	ft_memset(str, 'a', 5);
-	ft_memset(str2, 'z', 5);
-	//
-	ft_memcpy(str, str2, 3);
-	printf("ft_memcpy with dest 'aaaaa' and src 'zzzzz' 3 returns %s\n", str);
-	sep();
-	
-	// MEMCMP
-	printf("memcmp\n");
-	printf("for strings zzzaa and zzzzz, memcmp returns %d\n", memcmp(str, str2, sizeof(str)));
-	printf("for strings zzzaa and zzzzz, ft_memcmp returns %d\n", ft_memcmp(str, str2, sizeof(str)));
-	sep();
+	// ISALNUM
+	print_title("ISALNUM");
+	printf("@ return value: %d\n", ft_isalnum('@'));
+	printf("5 return value: %d\n", ft_isalnum('5'));
+	printf("a return value: %d\n", ft_isalnum('a'));
+	printf("\n\n");
+
+	//ISALPHA
+	print_title("ISALPHA");
+	printf("@ return value: %d\n", ft_isalpha('@'));
+	printf("5 return value: %d\n", ft_isalpha('5'));
+	printf("a return value: %d\n", ft_isalpha('a'));
+	printf("\n\n");
+
+	//ISASCII
+	print_title("ISASCII");
+	printf("@ return value: %d\n", ft_isascii('@'));
+	printf("a return value: %d\n", ft_isascii('a'));
+	printf("\n\n");
+
+	//ISDIGIT
+	print_title("ISDIGIT");
+	printf("@ return value: %d\n", ft_isdigit('@'));
+	printf("5 return value: %d\n", ft_isdigit('5'));
+	printf("a return value: %d\n", ft_isdigit('a'));
+	printf("\n\n");
+
+	//ISPRINT
+	print_title("ISPRINT");
+	printf("@ return value: %d\n", ft_isprint('@'));
+	printf("5 return value: %d\n", ft_isprint('5'));
+	printf("\n\n");
+
+	//ITOA
+	print_title("ITOA");
+    printf("the result for 2147483647 is %s\n", ft_itoa(2147483647));
+    printf("the result for 0 is %s\n", ft_itoa(0));
+	printf("\n\n");
 
 	// MEMCHR
-	printf("memchr\n");
-	printf("%s %s", str, str2);
+	print_title("MEMCHR");
+	char memchr_str[] = "This is a string";
+	char c = 'a';
+	printf("For \'%s\' ", memchr_str); 
+	printf("ft_memchr returns: %s\n", (char *)ft_memchr(memchr_str, c, ft_strlen(memchr_str)));
+	printf("Real memchr returns: %s\n", (char *)memchr(memchr_str, c, ft_strlen(memchr_str)));
+	printf("\n\n");
 
+	//MEMCMP
+	print_title("MEMCMP");
+	char memcmp_str[] = "Hello world";
+	char memcmp_str2[] = "Aloha world";
+	printf("For strings \'%s\' and \'%s\'\n", memcmp_str, memcmp_str2);
+	printf("ft_memcmp(s1, s2, 4) returns: %d\n", ft_memcmp(memcmp_str, memcmp_str2, 4));
+	printf("Real memcmp(s1, s2, 4) returns: %d\n", memcmp(memcmp_str, memcmp_str2, 4));
+	printf("\n\n");
+	
+	// // MEMCPY
+	print_title("MEMCPY");
+	char memcpy_dst[] = "Hello";
+	char memcpy_src[] = "Aloha";
+	char memcpy_dst2[] = "Hello";
+	char memcpy_src2[] = "Aloha";
+	printf("Before, dest:\'%s\' src:\'%s\'\n", memcpy_dst, memcpy_src);
+	ft_memcpy(memcpy_dst, memcpy_src, 3);
+	memcpy(memcpy_dst2, memcpy_src2, 3);
+	printf("After ft_memcpy(dst, src, 3)\ndest: %s\n", memcpy_dst);
+	printf("After real memcpy(dst, src, 3)\ndest: %s\n", memcpy_dst2);
+	printf("\n\n");
+
+	//MEMMOVE
+	/*
+int main(void)
+{
+	char str[] = "hello world";
+	printf("%s\n", ft_memmove(str, str+6, 5));
+}*/
+
+//STITERI
+/*void i_to_a(unsigned int i, char *c)
+{
+    if (*c == 'i' && i > 0)
+        *c = 'a';
+}*/
+
+// int main(void)
+// {
+//     char str[] = "This is the modified string";
+//     ft_striteri(str, i_to_a);
+//     printf("the string: %s\n", str);
+//     return 0;
+// }
+
+//STRMAPI
+/*char i_to_a(unsigned int i, char c)
+{
+    if (c == 'i' && i > 0)
+        return 'a';
+    else
+        return c;
+}
+
+// int main(void)
+// {
+//     char *str = "This is the modified string";
+//     printf("return value is: %s\n", ft_strmapi(str, i_to_a));
+//     return 0;
+// }*/
+
+	// MEMSET
+	print_title("MEMSET");
+	char memset_str[] = "Hello";
+	printf("Before: %s\n", memset_str);
+	printf("After ft_memset, with arguments 'x', 3: %s\n", (char *)ft_memset(memset_str, 'x', 3));
+	char memset_str2[] = "Hello";
+	printf("Real function returns: %s\n", (char *)memset(memset_str2, 'x', 3));
+	printf("\n\n");
+
+	//STRLEN
+	print_title("STRLEN");
+	char strlen_str[] = "This is regular string";
+	printf("\'%s\' has %d letters\n", strlen_str, ft_strlen(strlen_str));
+	printf("\n\n");
+
+	//TOUPPER TOLOWER
+	print_title("TOUPPER");
+	printf("a to upper becomes: %c\n", ft_toupper('a'));
+	printf("\n\n");
+	print_title("TOLOWER");
+	printf("A to lower becomes: %c\n", ft_tolower('A'));
+	printf("\n\n");
+
+	//STRCHR
+	print_title("STRCHR");
+	char strchr_str[] = "This is a regular string";
+	printf("For \'%s\' ft_strchr returns: %s\n", strchr_str, ft_strchr(strchr_str, 'a'));
+	printf("Real function returns: %s\n", strchr(strchr_str, 'a'));
+	printf("\n\n");
+
+	// STRRCHR
+	print_title("STRRCHR");
+	char strrchr_str[] = "It should print string";
+	printf("For \'%s\' ft_strrchr returns: %s\n", strrchr_str, ft_strrchr(strrchr_str, 's'));
+	printf("Real function returs: %s\n", strrchr(strrchr_str, 's'));
+	printf("\n\n");
+
+	// STRNCMP
+	print_title("STRNCMP");
+	char strncmp_str[] = "Hello";
+	char strncmp_str2[] = "Salut";
+	printf("For \'%s\' and \'%s\', it returns: %d\n", strncmp_str, strncmp_str2, ft_strncmp(strncmp_str, strncmp_str2, 3));
+	printf("real function returns: %d\n", strncmp(strncmp_str, strncmp_str2, 3));
+	printf("\n\n");
+	
 	// STRLCAT
-	// printf("strlcat\n");
-	// printf("strlcat returns %d\n", strlcat(str, str2, (sizeof(str) + sizeof(str2) +1)));
+	print_title("STRLCAT");
+	char strlcat_dst[9] = "Hello";
+	char strlcat_src[] = "Bye";
+	size_t size = ft_strlen(strlcat_dst) + ft_strlen(strlcat_src) + 1;
+	printf("For dst:\'%s\' and src:\'%s\'\n", strlcat_dst, strlcat_src);
+	printf("Dst becomes: \'%s\', ft_strlcat returns: %ld\n", strlcat_dst, ft_strlcat(strlcat_dst, strlcat_src, size));
+	printf("\n\n");
 
 	// STRLCPY 
-	
-	//printf("strlcpy\n");
-	//printf("hello and hello returns %d\n", ft_strlcpy("hello", "hello", 5));
-	// sep();
+	print_title("STRLCPY");
+	char strlcpy_dst[] = "Hello";
+	char strlcpy_src[] = "Salut";
+	printf("For \'%s\' and \'%s\'\n", strlcpy_dst, strlcpy_src);
+	printf("ft_strlcpy returns: %ld\n", ft_strlcpy(strlcpy_dst, strlcpy_src, 5));
+	printf("dst becomes: \'%s\'", strlcpy_dst);
+	printf("\n\n");
+
+
 	return 0;
 }

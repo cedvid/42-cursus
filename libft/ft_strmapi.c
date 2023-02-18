@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-// #include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -29,22 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = '\0';
 	return (res);
 }
-
-/*char i_to_a(unsigned int i, char c)
-{
-    if (c == 'i' && i > 0)
-        return 'a';
-    else
-        return c;
-}
-
-// int main(void)
-// {
-//     char *str = "This is the modified string";
-//     printf("return value is: %s\n", ft_strmapi(str, i_to_a));
-//     return 0;
-// }*/
-
 /*Function name ft_strmapi
 Prototype char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 Parameters s: The string on which to iterate.

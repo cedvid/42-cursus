@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -23,21 +22,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*void i_to_a(unsigned int i, char *c)
-{
-    if (*c == 'i' && i > 0)
-        *c = 'a';
-}*/
-
-// int main(void)
-// {
-//     char str[] = "This is the modified string";
-//     ft_striteri(str, i_to_a);
-//     printf("the string: %s\n", str);
-//     return 0;
-// }
-
 /*Function name ft_striteri
 Prototype void ft_striteri(char *s, void (*f)(unsigned int, char*));
 Parameters s: The string on which to iterate.

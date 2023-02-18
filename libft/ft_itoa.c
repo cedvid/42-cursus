@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 static int	ft_get_length(int n)
 {
@@ -57,12 +55,6 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
-
-/*int main(void)
-{
-    printf("the result for 2147483647 is %s\n", ft_itoa(2147483647));
-    printf("the result for 0 is %s\n", ft_itoa(0));
-}*/
 // Function name ft_itoa
 // Prototype char *ft_itoa(int n);
 // Turn in files -
