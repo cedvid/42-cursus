@@ -45,11 +45,18 @@ int main(void)
 
     //STRTRIM
     print_title("STRTRIM");
-
+    printf("Trimmed string: %s\n", ft_strtrim("* *Hello**", "* "));
     printf("\n\n");
     
     //SPLIT
     print_title("SPLIT");
+    char **split_arr = ft_split("Hello*Salut*Bonjour*Hi*Au revoir", '*');
+    int i = 0;
+    while (split_arr[i])
+    {
+        printf("%s\n", split_arr[i]);
+        i++;
+    }
     printf("\n\n");
 
     //ITOA
@@ -73,19 +80,27 @@ int main(void)
 	ft_striteri(striteri_str, ft_i_to_a);
 	printf("After: \'%s\'\n", striteri_str);
 	printf("\n\n");
-    /*
+    
     //PUTCHAR_FD
+    print_title("PUTCHAR_FD");
+    ft_putchar_fd('o', 1);
     printf("\n\n");
-
+    
     //PUTSTR_FD
+    print_title("PUTSTR_FD");
+    ft_putstr_fd("String", 1);
     printf("\n\n");
 
     //PUTENDL_FD
+    print_title("PUTENDL_FD");
+    ft_putendl_fd("Also a string", 1);
     printf("\n\n");
 
     //PUTNBR_FD
+    print_title("PUTNBR_FD");
+    ft_putnbr_fd(458, 1);
     printf("\n\n");
-    */
+    
     return 0;
 }
 
