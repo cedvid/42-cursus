@@ -23,6 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (NULL);
 }
-/*The strchr() function returns a pointer to the first occurrence of the character c in the string s.
-RETURN VALUE: pointer to the matched character or NULL if the character is not found.*/
-
+/*The strchr() function returns a pointer 
+to the first occurrence of the character c in the string s.
+RETURN VALUE: pointer to the matched character 
+or NULL if the character is not found.*/

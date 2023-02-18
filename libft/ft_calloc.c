@@ -26,4 +26,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 /*The  calloc()  function allocates memory for an array 
 of nmemb elements of size bytes each and returns a pointer 
 to the allocated memory. The memory is set to zero.*/
-

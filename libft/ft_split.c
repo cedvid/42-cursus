@@ -70,7 +70,6 @@ char	**ft_split(char const *s, char c)
 	ft_copy_strings(s, res, c, str_nbr);
 	return (res);
 }
-
 /*Function name ft_split
 Prototype char **ft_split(char const *s, char c);
 

@@ -26,7 +26,10 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*The strncmp() function compares only the first (at most) n bytes of s1 and s2. 
+/*The strncmp() function compares only the first 
+(at most) n bytes of s1 and s2. 
 The comparison is done using unsigned characters.
-RETURN VALUE: integer less than, equal to, or greater than zero if s1 
-(or the first n bytes thereof) is found,  respectively,  to  be  less  than,  to match, or be greater than s2.*/
+RETURN VALUE: integer less than, equal to, or greater 
+than zero if s1 
+(or the first n bytes thereof) is found,  respectively,  
+to  be  less  than,  to match, or be greater than s2.*/

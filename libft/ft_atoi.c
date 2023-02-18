@@ -43,4 +43,5 @@ int	ft_atoi(char *str)
 	}
 	return (num * sign);
 }
-/*The atoi() function converts the initial portion of the string pointed to by *str to int.*/
+/*The atoi() function converts the initial portion 
+of the string pointed to by *str to int.*/

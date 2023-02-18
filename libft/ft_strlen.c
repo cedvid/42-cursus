@@ -20,5 +20,8 @@ int	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').
-RETURN VALUE:the number of bytes in the string pointed to by s.*/
+/*The strlen() function calculates the length 
+of the string pointed to by s, excluding the 
+terminating null byte ('\0').
+RETURN VALUE:the number of bytes in the string 
+pointed to by s.*/
