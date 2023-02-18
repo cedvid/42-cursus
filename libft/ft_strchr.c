@@ -21,5 +21,8 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == c)
 		return ((char *)&s[i]);
 	else
-		return (0);
+		return (NULL);
 }
+/*The strchr() function returns a pointer to the first occurrence of the character c in the string s.
+RETURN VALUE: pointer to the matched character or NULL if the character is not found.*/
+

@@ -23,3 +23,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*The memcpy() function copies n bytes from memory area src to memory area dest.  
+The memory areas must not overlap.
+RETURN VALUE: pointer to dest.*/

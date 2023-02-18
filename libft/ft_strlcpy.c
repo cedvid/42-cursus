@@ -29,3 +29,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	}
 	return (len);
 }
+/*strlcpy() copy strings. It takes the full size of the buffer (not just the length) 
+and guarantee to NUL-terminate the result (as long as size is larger than 0). 
+The strlcpy() function copies up to size - 1 characters from the NUL-terminated string src to dst, 
+NUL-terminating the result. RETURN VALUE:the length of src.*/
