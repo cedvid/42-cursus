@@ -100,7 +100,7 @@ int	main(void)
 	printf("Real memcmp(s1, s2, 4) returns: %d\n", memcmp(memcmp_str, memcmp_str2, 4));
 	printf("\n\n");
 	
-	// // MEMCPY
+	// MEMCPY
 	print_title("MEMCPY");
 	char memcpy_dst[] = "Hello";
 	char memcpy_src[] = "Aloha";
@@ -120,15 +120,6 @@ int	main(void)
 	printf("After ft_memmove(str, str+6, 5): ");
 	printf("%s\n", (char *)ft_memmove(memmove_str, memmove_str+6, 5));
 	printf("\n\n");
-/*
-	// MEMSET
-	print_title("MEMSET");
-	char memset_str[] = "Hello";
-	printf("Before: %s\n", memset_str);
-	printf("After ft_memset, with arguments 'x', 3: %s\n", (char *)ft_memset(memset_str, 'x', 3));
-	char memset_str2[] = "Hello";
-	printf("Real function returns: %s\n", (char *)memset(memset_str2, 'x', 3));
-	printf("\n\n");
 
 	// MEMSET
 	print_title("MEMSET");
@@ -138,21 +129,7 @@ int	main(void)
 	char memset_str2[] = "Hello";
 	printf("Real function returns: %s\n", (char *)memset(memset_str2, 'x', 3));
 	printf("\n\n");
-
-	//STRLEN
-	print_title("STRLEN");
-	char strlen_str[] = "This is regular string";
-	printf("\'%s\' has %d letters\n", strlen_str, ft_strlen(strlen_str));
-	printf("\n\n");
-
-	//TOUPPER TOLOWER
-	print_title("TOUPPER");
-	printf("a to upper becomes: %c\n", ft_toupper('a'));
-	printf("\n\n");
-	print_title("TOLOWER");
-	printf("A to lower becomes: %c\n", ft_tolower('A'));
-	printf("\n\n");
-
+	
 	//STRCHR
 	print_title("STRCHR");
 	char strchr_str[] = "This is a regular string";
@@ -160,21 +137,12 @@ int	main(void)
 	printf("Real function returns: %s\n", strchr(strchr_str, 'a'));
 	printf("\n\n");
 
-	// STRRCHR
-	print_title("STRRCHR");
-	char strrchr_str[] = "It should print string";
-	printf("For \'%s\' ft_strrchr returns: %s\n", strrchr_str, ft_strrchr(strrchr_str, 's'));
-	printf("Real function returs: %s\n", strrchr(strrchr_str, 's'));
+	//STRDUP
+	print_title("STRDUP");
+	char *strdup_str = ft_strdup("Hello");
+	printf("String created with strdup: %s\n", strdup_str);
 	printf("\n\n");
 
-	// STRNCMP
-	print_title("STRNCMP");
-	char strncmp_str[] = "Hello";
-	char strncmp_str2[] = "Salut";
-	printf("For \'%s\' and \'%s\', it returns: %d\n", strncmp_str, strncmp_str2, ft_strncmp(strncmp_str, strncmp_str2, 3));
-	printf("real function returns: %d\n", strncmp(strncmp_str, strncmp_str2, 3));
-	printf("\n\n");
-	
 	// STRLCAT
 	print_title("STRLCAT");
 	char strlcat_dst[9] = "Hello";
@@ -189,10 +157,38 @@ int	main(void)
 	char strlcpy_dst[] = "Hello";
 	char strlcpy_src[] = "Salut";
 	printf("For \'%s\' and \'%s\'\n", strlcpy_dst, strlcpy_src);
-	printf("ft_strlcpy returns: %ld\n", ft_strlcpy(strlcpy_dst, strlcpy_src, 5));
+	printf("ft_strlcpy returns: %ld\n", ft_strlcpy(strlcpy_dst+3, strlcpy_src, 3));
 	printf("dst becomes: \'%s\'", strlcpy_dst);
 	printf("\n\n");
-*/
+
+	//STRLEN
+	print_title("STRLEN");
+	char strlen_str[] = "This is regular string";
+	printf("\'%s\' has %d letters\n", strlen_str, ft_strlen(strlen_str));
+	printf("\n\n");
+
+	//STRNCMP
+	print_title("STRNCMP");
+	printf("Returns: %d\n", ft_strncmp("Hello", "Hella", 5));
+	printf("\n\n");
+
+	//STRNSTR
+	print_title("STRNSTR");
+	printf("Returns: %s\n", ft_strnstr("Hello World!", "World", 11));
+	printf("\n\n");
+
+	// STRRCHR
+	print_title("STRRCHR");
+	printf("It should return string: %s", ft_strrchr("It should return string", 's'));
+	printf("\n\n");
+
+	//TOUPPER TOLOWER
+	print_title("TOUPPER");
+	printf("a to upper becomes: %c\n", ft_toupper('a'));
+	printf("\n\n");
+	print_title("TOLOWER");
+	printf("A to lower becomes: %c\n", ft_tolower('A'));
+	printf("\n\n");
 
 	return 0;
 }
