@@ -13,12 +13,11 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst)
-	{
-		if (del && lst->content)
-			del(lst->content);
-		free(lst);
-	}
+	if (!lst || !del)
+		return ;
+	if (lst->content)
+		del(lst->content);
+	free(lst);
 }
 /*Function name ft_lstdelone
 Prototype void ft_lstdelone(t_list *lst, void (*del)(void
