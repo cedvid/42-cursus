@@ -14,27 +14,26 @@
 int	ft_atoi(char *str)
 {
 	int	i;
-	int	num;
+	int	res;
 	int	sign;
 
 	i = 0;
-	num = 0;
+	res = 0;
 	sign = 1;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign *= -1;
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
-		num = (num * 10) + (str[i] - '0');
+		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
-	return (num * sign);
+	return (res * sign);
 }
 /*The atoi() function converts the initial portion 
 of the string pointed to by *str to int.*/
