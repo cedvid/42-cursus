@@ -30,14 +30,12 @@ static int	ft_get_length(int n)
 char	*ft_itoa(int n)
 {
 	int		length;
-	int		i;
 	char	*res;
 
 	length = ft_get_length(n);
 	res = malloc(sizeof(char) * length);
 	if (!res)
 		return (NULL);
-	res[length - 1] = '\0';
 	if (n == 0)
 		return (ft_memcpy(res, "0", length - 1));
 	if (n < 0)
@@ -47,11 +45,13 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		n *= -1;
 	}
-	i = length - 2;
+	res[length--] = '\0';
+	length--;
 	while (n != 0)
 	{
-		res[i--] = (n % 10) + '0';
+		res[length] = (n % 10) + '0';
 		n /= 10;
+		length--;
 	}
 	return (res);
 }
