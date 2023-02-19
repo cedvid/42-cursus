@@ -13,15 +13,15 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*node;
+	t_list	*current_node;
 
 	if (!lst || !f)
 		return ;
-	node = lst;
-	while (node)
+	current_node = lst;
+	while (current_node)
 	{
-		(*f)(node->content);
-		node = node->next;
+		(*f)(current_node->content);
+		current_node = current_node->next;
 	}
 }
 /*Function name ft_lstiter
