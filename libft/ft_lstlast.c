@@ -13,13 +13,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst)
-	{
-		if (lst->next != NULL)
-			lst = lst->next;
-		else
-			return (lst);
-	}
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
 	return (lst);
 }
 /*Function name ft_lstlast
