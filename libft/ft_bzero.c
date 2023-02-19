@@ -13,7 +13,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	if (n == 0)
+	if (!n || !s)
 		return ;
 	while (n)
 	{
