@@ -6,7 +6,7 @@
 /*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:45:02 by cvidot            #+#    #+#             */
-/*   Updated: 2023/02/13 12:33:04 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/20 14:49:01 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -30,12 +30,14 @@ static int	ft_get_length(int n)
 char	*ft_itoa(int n)
 {
 	int		length;
+	int		i;
 	char	*res;
 
 	length = ft_get_length(n);
 	res = malloc(sizeof(char) * length);
 	if (!res)
 		return (NULL);
+	res[length - 1] = '\0';
 	if (n == 0)
 		return (ft_memcpy(res, "0", length - 1));
 	if (n < 0)
@@ -45,16 +47,15 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 		n *= -1;
 	}
-	res[length--] = '\0';
-	length--;
+	i = length - 2;
 	while (n != 0)
 	{
-		res[length] = (n % 10) + '0';
+		res[i--] = (n % 10) + '0';
 		n /= 10;
-		length--;
 	}
 	return (res);
 }
+
 // Function name ft_itoa
 // Prototype char *ft_itoa(int n);
 // Turn in files -
