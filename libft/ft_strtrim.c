@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	is_set(char const *set, char c)
+static int	ft_is_set(char const *set, char c)
 {
 	while (*set)
 	{
@@ -32,13 +32,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	start = (char *) s1;
-	end = start + ft_strlen(s1) - 1;
-	while (is_set(set, *start))
+	end = (char *) s1 + ft_strlen(s1) - 1;
+	while (ft_is_set(set, *start))
 		start++;
-	while (is_set(set, *end) && end > start)
+	while (ft_is_set(set, *end) && end > start)
 		end--;
 	len = end - start + 1;
-	trim_str = (char *) malloc(len + 1);
+	trim_str = (char *) malloc(len);
 	if (!trim_str)
 		return (NULL);
 	while (i < len)
