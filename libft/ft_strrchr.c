@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (&str[len]);
 		len--;
 	}
-	return (0);
+	return (NULL);
 }
 /*The strrchr() function returns a pointer 
 to the last occurrence of the character c in the string s.
