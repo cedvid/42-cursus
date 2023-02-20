@@ -6,7 +6,7 @@
 /*   By: cvidot <cvidot@student.42prague.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:44:41 by cvidot            #+#    #+#             */
-/*   Updated: 2023/02/13 11:03:11 by cvidot           ###   ########.fr       */
+/*   Updated: 2023/02/20 16:30:47 by cvidot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,7 +50,7 @@ static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
 	char const	*start;
 
 	current_str = -1;
-	while (current_str++ < str_nbr)
+	while (current_str++ < str_nbr - 1)
 	{
 		while (*s == c)
 			s++;
@@ -77,6 +77,8 @@ char	**ft_split(char const *s, char c)
 	int		str_nbr;
 	char	**res;
 
+	if (!s)
+		return (NULL);
 	str_nbr = ft_str_count(s, c);
 	res = malloc(sizeof(char *) * (str_nbr + 1));
 	if (!res)
