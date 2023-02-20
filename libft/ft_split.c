@@ -49,8 +49,8 @@ static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
 	int			length;
 	char const	*start;
 
-	current_str = 0;
-	while (current_str < str_nbr)
+	current_str = -1;
+	while (current_str++ < str_nbr)
 	{
 		while (*s == c)
 			s++;
@@ -68,7 +68,6 @@ static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
 			return ;
 		}
 		ft_strlcpy(res[current_str], (char *)start, length + 1);
-		current_str++;
 	}
 	res[current_str] = NULL;
 }
