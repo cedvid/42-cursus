@@ -30,29 +30,44 @@ static int	ft_str_count(char const *str, char c)
 	return (count);
 }
 
-static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
+void	ft_free_arr(char **arr)
 {
 	int	i;
-	int	current_str;
-	int	start;
-	int	length;
 
 	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+static void	ft_copy_strings(char const *s, char **res, char c, int str_nbr)
+{
+	int			current_str;
+	int			length;
+	char const	*start;
+
 	current_str = 0;
 	while (current_str < str_nbr)
 	{
-		while (s[i] == c)
-			i++;
-		start = i;
+		while (*s == c)
+			s++;
+		start = s;
 		length = 0;
-		while (s[i] && s[i] != c)
+		while (*s && *s != c)
 		{
 			length++;
-			i++;
+			s++;
 		}
-		res[current_str] = (char *)malloc(sizeof(char) * length + 1);
-		ft_strlcpy(res[current_str], &s[start], length + 1);
-		res[current_str][length] = '\0';
+		res[current_str] = malloc(sizeof(char) * length + 1);
+		if (!res[current_str])
+		{
+			ft_free_arr(res);
+			return ;
+		}
+		ft_strlcpy(res[current_str], (char *)start, length + 1);
 		current_str++;
 	}
 	res[current_str] = NULL;
@@ -64,7 +79,7 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 
 	str_nbr = ft_str_count(s, c);
-	res = (char **)malloc(sizeof(char *) * (str_nbr + 1));
+	res = malloc(sizeof(char *) * (str_nbr + 1));
 	if (!res)
 		return (NULL);
 	ft_copy_strings(s, res, c, str_nbr);
