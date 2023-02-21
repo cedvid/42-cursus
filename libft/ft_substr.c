@@ -13,19 +13,20 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char			*sub;
+	char	*sub;
+	size_t	s_len;
 
-	sub = (char *)malloc(sizeof(char) * len + 1);
-	i = 0;
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen((char *)s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	sub = malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
-	while (i < len)
-	{
-		sub[i] = s[start + i];
-		i++;
-	}
-	sub[i] = '\0';
+	ft_strlcpy(sub, ((char *) s + start), (len +1));
 	return (sub);
 }
 /*Function name ft_substr
